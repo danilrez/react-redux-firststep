@@ -19,6 +19,7 @@ export default function Comments(props) {
     e.preventDefault();
     const id = uniqid();
     dispatch(commentCreate(textComment, id));
+    setTextComment('');
   };
 
   React.useEffect(() => {
@@ -29,8 +30,8 @@ export default function Comments(props) {
   return (
     <div className="card-comments">
       <form onSubmit={handleSubmit} className="comments-item-create">
-        <input type="text" value={textComment} onChange={handleInput}></input>
-        <input type="submit" hidden></input>
+        <input type="text" value={textComment} onChange={handleInput} />
+        {/* <input type="submit" hidden /> */}
       </form>
       {!!comments.length &&
         comments.map((res) => {
