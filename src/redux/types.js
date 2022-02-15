@@ -1,0 +1,13 @@
+export const INC = 'LIKES/INC';
+export const DEC = 'LIKES/DEC';
+export const INPUT_TEXT = 'POSTS/INPUT_TEXT';
+export const COMMENT_CREATE = 'COMMENTS/COMMENT_CREATE';
+export const COMMENT_UPDATE = 'COMMENTS/COMMENT_CREATE';
+export const COMMENT_DELETE = 'COMMENTS/COMMENT_DELETE';
+
+export const COMMENTS_LOAD = 'COMMENTS/COMMENTS_LOAD';
+export const LOADER_ON = 'LOAD/LOADER_ON';
+export const LOADER_OFF = 'LOAD/LOADER_OFF';
+
+export const ERROR_ON = 'ERROR/ERROR_ON';
+export const ERROR_OFF = 'ERROR/ERROR_OFF';
