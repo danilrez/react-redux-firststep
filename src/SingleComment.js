@@ -1,24 +1,14 @@
 import React from 'react';
-import { commentUpdate, commentDelete } from './redux/actions';
 import { useDispatch } from 'react-redux';
+import { commentUpdate, commentDelete } from './redux/actions';
 
 export default function SingleComment({ data }) {
   const [commentText, setCommentText] = React.useState('');
-
-  const { comments, id } = data;
+  const { comment, id } = data;
   const dispatch = useDispatch();
-
-  const handleInput = (e) => {
-    setCommentText(e.target.value);
-  };
-
-  React.useEffect(() => {
-    if (comments) setCommentText(comments);
-  }, [comments]);
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    console.log('id > ', id);
     dispatch(commentUpdate(commentText, id));
   };
 
@@ -26,6 +16,14 @@ export default function SingleComment({ data }) {
     e.preventDefault();
     dispatch(commentDelete(id));
   };
+
+  console.log(data);
+
+  React.useEffect(() => {
+    if (comment) setCommentText(comment);
+  }, [comment]);
+
+  const handleInput = (e) => setCommentText(e.target.value);
 
   return (
     <form onSubmit={handleUpdate} className="comments-item">

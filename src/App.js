@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import { useSelector } from 'react-redux';
 import Likes from './Likes';
 import Title from './Title';
 import Comments from './Comments';
 import Spin from './Spin';
-import { useSelector } from 'react-redux';
+import './App.css';
 
 function App() {
   const error = useSelector((state) => state.loadReducer.error);

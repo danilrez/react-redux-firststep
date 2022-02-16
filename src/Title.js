@@ -4,9 +4,7 @@ import { inputText } from './redux/actions';
 
 export default function Title(props) {
   const [textComment, setTextComment] = React.useState('');
-  const comment = useSelector((state) => {
-    return state.inputReducer.comment;
-  });
+  const text = useSelector((state) => state.inputReducer.text);
 
   const dispatch = useDispatch();
 
@@ -25,11 +23,9 @@ export default function Title(props) {
       <div className="card-title-top">
         <form onSubmit={handleSubmit} className="comments-item-create">
           <input type="text" value={textComment} onChange={handleChange} />
-          {/* <input type="submit" hidden /> */}
         </form>
       </div>
-
-      <p>{comment}</p>
+      <p>{text}</p>
     </div>
   );
 }

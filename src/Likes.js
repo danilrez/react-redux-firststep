@@ -5,7 +5,7 @@ import { incLikes, disLikes } from './redux/actions';
 function Likes(props) {
   return (
     <div className="button-controls">
-      <button onClick={props.onIncLikes}>Likes: {props.likes}</button>
+      <button onClick={props.onIncLikes}>❤ {props.likes}</button>
       <button onClick={props.onDisLikes}>Dislike</button>
     </div>
   );

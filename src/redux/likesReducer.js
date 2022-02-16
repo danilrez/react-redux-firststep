@@ -1,4 +1,5 @@
 import { INC, DEC } from './types';
+
 const initialState = {
   likes: 0,
 };

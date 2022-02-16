@@ -27,21 +27,21 @@ export const disLikes = () => {
 export const inputText = (text) => {
   return {
     type: INPUT_TEXT,
-    comment: text,
+    text: text,
   };
 };
 
-export const commentCreate = (text, id) => {
+export const commentCreate = (comment, id) => {
   return {
     type: COMMENT_CREATE,
-    data: { comments: text, id: id },
+    data: { comment: comment, id: id },
   };
 };
 
-export const commentUpdate = (text, id) => {
+export const commentUpdate = (comment, id) => {
   return {
     type: COMMENT_UPDATE,
-    data: { comments: text, id: id },
+    data: { comment: comment, id: id },
   };
 };
 
@@ -68,8 +68,7 @@ export const commentLoad = () => {
         dispatch(loaderOff());
       }, 1000);
     } catch (err) {
-      console.log();
-      dispatch(errorOn(`Ошибка API: ${err.message}`));
+      dispatch(errorOn(`Ошибка: ${err.message}`));
       dispatch(loaderOff());
     }
   };

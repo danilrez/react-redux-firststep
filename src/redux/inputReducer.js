@@ -1,6 +1,7 @@
 import { INPUT_TEXT } from './types';
+
 const initialState = {
-  comment: '',
+  text: '',
 };
 
 export const inputReducer = (state = initialState, action) => {
@@ -8,8 +9,9 @@ export const inputReducer = (state = initialState, action) => {
     case INPUT_TEXT:
       return {
         ...state,
-        comment: action.comment,
+        text: action.text,
       };
+
     default:
       return state;
   }
